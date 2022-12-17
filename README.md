@@ -1,7 +1,7 @@
 # Efficient Reinforcement Learning Through Trajectory Generation
 
 This repository contains source code necessary to reproduce the results presented in the following paper:
-[Efficient Reinforcement Learning Through Trajectory Generation]([https://arxiv.org/abs/2009.05654](https://arxiv.org/abs/2211.17249))  
+[Efficient Reinforcement Learning Through Trajectory Generation](https://arxiv.org/abs/2211.17249) 
 
 Authors: Wenqi Cui, Linbin Huang, Weiwei Yang, Baosen Zhang
 
@@ -16,6 +16,6 @@ To overcome these challenges, we propose a trajectory generation algorithm, whic
 
 
 # Language and Dependencies
-We used the open-source Python package Tensorflow 2.0 to train the neural network models. The code can directly run through Google Colab using this [link]([https://colab.research.google.com/drive/16aZdepMEFG1sVxQVLnGzcKd6I9jUCKFf?usp=sharing](https://colab.research.google.com/drive/16aZdepMEFG1sVxQVLnGzcKd6I9jUCKFf?usp=sharing)).
+We used the open-source Python package Tensorflow 2.0 to train the neural network models. The code can directly run through Google Colab using this [link](https://colab.research.google.com/drive/16aZdepMEFG1sVxQVLnGzcKd6I9jUCKFf?usp=sharing/).
 
 
