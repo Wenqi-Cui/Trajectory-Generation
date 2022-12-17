@@ -1,26 +1,21 @@
-# RNN-Based Reinforcement Learninging Framework for Optimal Frequency Control with Stability Guarantee
+# Efficient Reinforcement Learning Through Trajectory Generation
+
 This repository contains source code necessary to reproduce the results presented in the following paper:
-[Reinforcement Learning for Optimal Frequency Control: A Lyapunov Approach](https://arxiv.org/abs/2009.05654)  
+[Efficient Reinforcement Learning Through Trajectory Generation]([https://arxiv.org/abs/2009.05654](https://arxiv.org/abs/2211.17249))  
 
-Authors: Wenqi Cui and Baosen Zhang  
+Authors: Wenqi Cui, Linbin Huang, Weiwei Yang, Baosen Zhang
 
-University of Washington 
 
 
 # Motivation
-The increase in penetration of inverter-based resources provide us with more  flexibility in frequency regulation of power systems in addition to conventional linear droop controllers. Because of the fast power electronic interfaces, inverter-based resources can be used to realize complex control functions and potentially offer large gains in performance compared to linear controllers. Reinforcement learning has emerged as popular method to find these nonlinear controllers by parameterizing them as neural networks. 
+A key barrier to using reinforcement learning (RL) in many real-world applications is the requirement of a large number of system interactions to learn a good control policy. Off-policy and Offline RL methods have been proposed to reduce the number of interactions with the physical environment by learning control policies from historical data. However, their performances suffer from the lack of exploration and the distributional shifts in trajectories once controllers are updated. Moreover, most RL methods require that all states are directly observed, which is difficult to be attained in many settings.
 
-The key challenge with learning based approach is that stability constraints are difficult to enforce on the learned controllers. In addition, the time-coupled dynamics of the power system will 
-greatly slow down the training of the neural network. In this paper, we propose to explicitly engineer the structure of neural network based controllers such that they guarantee system stability for all topologies and parameters. This is done by using a Lyapunov function to guide their structures. A recurrent neural network based reinforcement learning architecture is used to efficiently train the weights of controllers. The resulting controllers only use local information and outperform linear droop as well as strategies learned purely by using reinforcement learning. 
+To overcome these challenges, we propose a trajectory generation algorithm, which adaptively generates new trajectories as if the system is being operated and explored under the updated control policies. Motivated by the fundamental lemma for linear systems, assuming sufficient excitation, we generate trajectories from linear combinations of historical trajectories. For linear feedback control, we prove that the algorithm generates trajectories with the exact distribution as if they are sampled from the real system using the updated control policy. In particular, the algorithm extends to systems where the states are not directly observed. Experiments show that the proposed method significantly reduces the number of sampled data needed for RL algorithms.
 
 
-# Flexible non-linear controller learnt from the proposed framework
-Here we show the action of neural network controller compared with linear droop control
-<img src="/Action_Mono.png" height="450px" width="700px" >
+
 
 # Language and Dependencies
-All code are implemented in Python. Data for the power system is imported from MATLAB as 'IEEE_39bus_Kron.mat'. The coeffcient for linear droop control is obtained by fmincon function of Matlab as 'Sol_linear.mat'. We used the open-source Python package Tensorflow 2.0 to implement RNN and train the neural network models.
+All code are implemented in Python. We used the open-source Python package Tensorflow 2.0 to train the neural network models.
 
 
-# Code References
-We thank https://sourceforge.net/projects/pg-sync-models for developping open-sorce MATLAB toolbox for Kron Reduction, and https://www.ecse.rpi.edu/~chowj/ for developping  open-sorce power system toolbox.
