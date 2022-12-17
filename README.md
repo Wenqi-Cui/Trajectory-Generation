@@ -16,6 +16,6 @@ To overcome these challenges, we propose a trajectory generation algorithm, whic
 
 
 # Language and Dependencies
-All code are implemented in Python. We used the open-source Python package Tensorflow 2.0 to train the neural network models.
+We used the open-source Python package Tensorflow 2.0 to train the neural network models. The code can directly run through Google Colab using this [link]([https://colab.research.google.com/drive/16aZdepMEFG1sVxQVLnGzcKd6I9jUCKFf?usp=sharing](https://colab.research.google.com/drive/16aZdepMEFG1sVxQVLnGzcKd6I9jUCKFf?usp=sharing)).
 
 
